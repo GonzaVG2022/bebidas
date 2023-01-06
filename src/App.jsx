@@ -8,9 +8,9 @@ import Warning from './components/Warning'
 function App() {
   
   const [ drinkData, setdrinkData ] = useState([])
-  const [ drink, setDrink ] = useState([])
+  const [ drink, setDrink ] = useState('')
 
-  useEffect(() => {
+  useEffect(() => { //recibe una fs y vareables dentro de un array que desencadena una axion, cada vez que se actualiza el array se ejecuta la fs
     axios
     .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
     .then((resp) => {
@@ -34,7 +34,7 @@ function App() {
       <div className='conteiner__seeker'>
         <form onSubmit={handleSubmit}>
           <input id='drink' name='drink' defaultValue={drink} placeholder='DRINK' type="text" />
-          <button >buscar</button>
+          <button ><i class="fa-solid fa-martini-glass-citrus"></i></button>
         </form>
       </div>
       
